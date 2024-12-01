@@ -12,7 +12,9 @@ library(lubridate)
 library(dplyr)
 library(tidytext)
 library(reshape2)
-library(tidyr) # Load tidyr for unnest_tokens
+library(tidyr)
+library(writexl)
+
 
 # Read the data 
 df <- read_excel(file.choose())
@@ -28,12 +30,65 @@ colnames(df)
 colSums(is.na(df))
 
 # --- Data cleaning --- #
-# Remove extra spaces and newline characters
-df$`USS Comment` <- str_replace_all(df$`USS Comment`, "\\s+", " ")  # Replace multiple spaces with a single space
-df$`USS Comment` <- str_trim(df$`USS Comment`)  # Trim leading and trailing spaces
 
-# Remove rows where "USS Comment" is NA or empty
-df <- df %>% filter(!is.na(`USS Comment`) & `USS Comment` != "")
+# Step 1: Replace multiple spaces with a single space
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "\\s+", " ")
+
+# Step 2: Trim leading and trailing spaces
+df$"USS Comment" <- str_trim(df$"USS Comment")
+
+# Step 3: Remove email addresses using a regular expression
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}", "")
+
+# Step 4: Remove URLs using a regular expression
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "https?://\\S+|www\\S+", "")
+
+# Step 5: Remove @ and numbers, but keep ' , !, ?
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "[@\\d]", "")
+
+# Step 6: Remove common sign-off phrases (e.g., "Warm regards", "Best regards", "Kind regards")
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "(Warm regards|Best regards|Kind regards|Sincerely|Cheers|Best wishes)\\s*,?\\s*", "")
+
+# Step 7: Remove unwanted patterns like "[cid:image.png" or any similar pattern
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "\\[cid:image\\.png[^\\]]*\\]", "")
+
+# Step 8: Remove unwanted characters like -, %, :, *, .
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "[-%:*.,\\[\\]/\"()]", "")
+
+# Step 9: Replace multiple exclamation marks with a single one
+df$"USS Comment" <- str_replace_all(df$"USS Comment", "!+", "!")
+
+# Step 10: Remove comments that contain only punctuation marks (e.g., "!!!", "????")
+df$"USS Comment" <- ifelse(str_detect(df$"USS Comment", "^[!?]+$"), "", df$"USS Comment")
+
+# --- Spell checking and correction --- #
+
+# Function to correct spelling in a single comment
+correct_spelling <- function(comment) {
+  if (is.na(comment) || comment == "") {
+    return(comment) # Skip if the comment is empty or NA
+  }
+  
+  # Split the comment into words
+  words <- unlist(strsplit(comment, "\\s+"))
+  
+  # Check for misspelled words
+  misspelled <- hunspell(words)
+  
+  # Replace misspelled words with the first suggestion
+  for (i in seq_along(misspelled)) {
+    if (length(misspelled[[i]]) > 0) {
+      suggestions <- hunspell_suggest(misspelled[[i]])
+      if (length(suggestions[[1]]) > 0) {
+        words[words == misspelled[[i]]] <- suggestions[[1]][1]
+      }
+    }
+  }
+  
+  # Recombine the words into a corrected comment
+  corrected_comment <- paste(words, collapse = " ")
+  return(corrected_comment)
+}
 
 # Convert the comments to lowercase
 df$`USS Comment` <- tolower(df$`USS Comment`)
@@ -48,6 +103,25 @@ df$`USS Comment` <- sapply(df$`USS Comment`, function(x) {
   words <- words[!words %in% stopwords]
   paste(words, collapse = " ")
 })
+# View the cleaned comments
+print(df)
+
+write_xlsx(df, "test7cleaned_dataset_test.xlsx")
+
+##################################################################
+
+library(textcat)
+
+# Detect language of the 'USS Comment' column
+df$Language <- textcat(df$`USS Comment`)
+
+# Filter rows with English comments
+df_english <- df[df$Language == "english", ]
+
+tail(df)
+
+write_xlsx(df, "english_cleaned_dataset.xlsx")
+
 
 # Sentiment Analysis #
 
@@ -74,6 +148,13 @@ df$sentiment_check <- case_when(
 
 # View the mismatch summary
 table(df$sentiment_check)
+
+# Filter the mismatched comments
+mismatched_comments <- df %>% filter(sentiment_check == "Mismatch")
+
+# View the mismatched comments
+tail(mismatched_comments)
+
 
 # Visualize sentiment and rating mismatches
 ggplot(df, aes(x = sentiment_check, fill = sentiment_check)) +
