@@ -1,4 +1,4 @@
-# <div align="center"> 🎯 Optimizing CSAT Through Sentiment Analysis and Predictive ML Techniques</div>
+# <div align="center"> Optimizing CSAT Through Sentiment Analysis and Predictive ML Techniques</div>
 
 <div align="center"><img src="images/image.png" alt="Intro" /></div>
 
