@@ -26,23 +26,23 @@ This project integrates sentiment analysis with predictive modeling to improve C
 
 📌 Machine Learning Models – The following classifiers were applied to predict CSAT:
 
-🟢 Logistic Regression (Traditional ML Baseline)
+✅ Logistic Regression (Traditional ML Baseline)
 
-🟢 Random Forest
+✅ Random Forest
 
-🟢 Support Vector Machine (SVM)
+✅ Support Vector Machine (SVM)
 
-🟢 Gradient Boosting Machine (GBM)
+✅ Gradient Boosting Machine (GBM)
 
 📌 Evaluation Metrics – Models were assessed using:
 
-📊 Accuracy – Measures overall correctness of predictions.
+✅ Accuracy – Measures overall correctness of predictions.
 
-📊 ROC-AUC Score – Evaluates the model's ability to distinguish between satisfied and dissatisfied customers.
+✅ ROC-AUC Score – Evaluates the model's ability to distinguish between satisfied and dissatisfied customers.
 
-📊 Precision, Recall, F1-score – Measures the balance between false positives and false negatives.
+✅ Precision, Recall, F1-score – Measures the balance between false positives and false negatives.
 
-📊 Confusion Matrix – Provides insights into correct vs. misclassified instances.
+✅ Confusion Matrix – Provides insights into correct vs. misclassified instances.
 
 🔍 Key Finding: Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite the high accuracy across all models (97.62%).
 
