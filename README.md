@@ -26,61 +26,33 @@ This study is structured around three key research objectives:
   
 **Objective 2: Aligning Sentiment with CSAT Scores**
 
-The model detected 5.75% of user-labeled Negative feedback as actually Positive, improving sentiment alignment.
+- The model detected 5.75% of user-labeled Negative feedback as actually Positive, improving sentiment alignment.
 
-It also detected 0.65% of user-labeled Positive feedback as actually Negative, uncovering hidden dissatisfaction.
-This alignment improves the reliability of CSAT scores.
-Objective 3: Predictive Modeling of CSAT Using MLThe following machine learning models were applied:
-Logistic Regression (Baseline Model)
-Random Forest
-Support Vector Machine (SVM)
-Gradient Boosting Machine (GBM)
-Evaluation Metrics:
-Accuracy – Overall correctness of predictions.
-ROC-AUC Score – Ability to distinguish sentiment polarity.
-Precision, Recall, F1-score – Balance between false positives & false negatives.
-Confusion Matrix – Insights into correct vs. misclassified instances.
-Key Finding:
-Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite high accuracy across all models (97.62%).
+- It also detected 0.65% of user-labeled Positive feedback as actually Negative, uncovering hidden dissatisfaction.
 
+- This alignment improves the reliability of CSAT scores.
 
+**Objective 3: Predictive Modeling of CSAT Using ML**
 
-## 🛠 Approach and Methodology
+- The following machine learning models were applied:
 
-This project integrates sentiment analysis with predictive modeling to improve CSAT classification. The process includes:
+  - Logistic Regression (Baseline Model)
+  - Random Forest
+  - Support Vector Machine (SVM)
+  - Gradient Boosting Machine (GBM)
 
-📌 Sentiment Analysis – Textual feedback is analyzed and classified using:
+- Evaluation Metrics:
 
-✅ Lexicon-based methods (AFINN) for quick sentiment scoring.
+- Accuracy – Overall correctness of predictions.
+- ROC-AUC Score – Ability to distinguish sentiment polarity.
+- Precision, Recall, F1-score – Balance between false positives & false negatives.
+- Confusion Matrix – Insights into correct vs. misclassified instances.
 
-✅ Deep learning (BERT) for contextual sentiment classification, capturing nuanced expressions.
+**Key Finding:**
 
-📌 Feature Engineering – Incident-related variables such as Country, and Region are transformed into machine-readable formats.
+- Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite high accuracy across all models (97.62%).
 
-📌 Machine Learning Models – The following classifiers were applied to predict CSAT:
-
-✅ Logistic Regression (Traditional ML Baseline)
-
-✅ Random Forest
-
-✅ Support Vector Machine (SVM)
-
-✅ Gradient Boosting Machine (GBM)
-
-📌 Evaluation Metrics – Models were assessed using:
-
-✅ Accuracy – Measures overall correctness of predictions.
-
-✅ ROC-AUC Score – Evaluates the model's ability to distinguish between satisfied and dissatisfied customers.
-
-✅ Precision, Recall, F1-score – Measures the balance between false positives and false negatives.
-
-✅ Confusion Matrix – Provides insights into correct vs. misclassified instances.
-
-🔍 Key Finding: Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite the high accuracy across all models (97.62%).
-
-
-## 📈 Key Findings
+## 📈 Conclusion
 
 ✅ BERT significantly outperforms lexicon-based methods in understanding context, negations, and nuanced sentiment.
 
@@ -90,8 +62,18 @@ This project integrates sentiment analysis with predictive modeling to improve C
 
 ## 🔮 Future Enhancements
 
-🚀 Expand to Multilingual Feedback – Incorporate customer reviews in different languages to improve global applicability.
+- Expand to Multilingual Feedback – Incorporate customer reviews in different languages to improve global applicability.
 
-🚀 Feature Expansion – Add Ticket Priority, User Type, and additional metadata for better prediction accuracy.
+- Feature Expansion – Add Ticket Priority, User Type, and additional metadata for better prediction accuracy.
 
-🚀 Explore Advanced Transformers – Investigate more sophisticated NLP models for improved sentiment classification.
+- Explore Advanced Transformers – Investigate more sophisticated NLP models for improved sentiment classification.
+
+## Repository Structure
+
+📂 Optimizing-CSAT-Sentiment-Analysis
+│── 📂 images                 # Contains all visualization images
+│── 📂 data                   # Dataset used for analysis
+│── 📂 notebooks              # Jupyter notebooks for analysis and modeling
+│── README.md                # Project documentation
+│── requirements.txt         # Dependencies for model execution
+
