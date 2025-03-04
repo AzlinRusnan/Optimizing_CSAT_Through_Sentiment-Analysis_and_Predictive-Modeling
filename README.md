@@ -76,12 +76,4 @@ This study is structured around three key research objectives. Below are the obj
 
 - Explore Advanced Transformers – Investigate more sophisticated NLP models for improved sentiment classification.
 
-## Repository Structure
-
-📂 Optimizing-CSAT-Sentiment-Analysis
-│── 📂 images                 # Contains all visualization images
-│── 📂 data                   # Dataset used for analysis
-│── 📂 notebooks              # Jupyter notebooks for analysis and modeling
-│── README.md                # Project documentation
-│── requirements.txt         # Dependencies for model execution
 
