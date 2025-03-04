@@ -6,9 +6,9 @@
 
 Customer Satisfaction (CSAT) is a crucial indicator of service quality in organizations. However, understanding the factors that contribute to customer dissatisfaction and predicting negative experiences remains a challenge. This project applies two advanced techniques to address this issue:
 
-**Sentiment Analysis – Analyzing customer feedback to determine whether comments are positive or negative.**
+**1. Sentiment Analysis – Analyzing customer feedback to determine whether comments are positive or negative.**
    
-**Predictive Modeling – Using machine learning to classify customer satisfaction levels based on incident-related data.**
+**2. Predictive Modeling – Using machine learning to classify customer satisfaction levels based on incident-related data.**
    
 By combining natural language processing (NLP) and machine learning, this study aims to provide deeper insights into customer feedback and proactively anticipate dissatisfaction. The goal is to enhance organizational response strategies and improve overall service efficiency.
 
