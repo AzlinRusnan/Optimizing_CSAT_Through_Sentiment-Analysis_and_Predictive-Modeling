@@ -14,17 +14,23 @@ By combining natural language processing (NLP) and machine learning, this study 
 
 ## Research Objectives
 
-This study is structured around three key research objectives:
+This study is structured around three key research objectives. Below are the objective and the key findings:
 
-**Objective 1: Sentiment Analysis for Customer Feedback**
+### Objective 1: Sentiment Analysis for Customer Feedback
 
 - AFINN initially showed the best classification accuracy.
   
 - However, as shown below, it fails to capture the actual sentiment of customer feedback correctly.
+
+![1](images/lexiconresults.png)
   
 - Due to AFINN’s limitations, we explored a more advanced BERT model, which significantly improved sentiment detection.
+
+![2](images/BERTRES.png)
   
-**Objective 2: Aligning Sentiment with CSAT Scores**
+### Objective 2: Aligning Sentiment with CSAT Scores
+
+![3](images/objtwo.png)
 
 - The model detected 5.75% of user-labeled Negative feedback as actually Positive, improving sentiment alignment.
 
@@ -32,7 +38,7 @@ This study is structured around three key research objectives:
 
 - This alignment improves the reliability of CSAT scores.
 
-**Objective 3: Predictive Modeling of CSAT Using ML**
+### Objective 3: Predictive Modeling of CSAT Using ML
 
 - The following machine learning models were applied:
 
@@ -50,6 +56,8 @@ This study is structured around three key research objectives:
 
 **Key Finding:**
 
+![3](images/mlresults.png)
+
 - Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite high accuracy across all models (97.62%).
 
 ## 📈 Conclusion
@@ -60,7 +68,7 @@ This study is structured around three key research objectives:
 
 ✅ Logistic Regression outperformed other models in ROC-AUC, making it the most effective model for sentiment classification.
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - Expand to Multilingual Feedback – Incorporate customer reviews in different languages to improve global applicability.
 
