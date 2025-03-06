@@ -60,13 +60,19 @@ This study is structured around three key research objectives. Below are the obj
 
 - Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite high accuracy across all models (97.62%).
 
-## 📈 Conclusion
+## 📈 Output for Research Objective 3
+
+![4](images/op.png)
+
+##  Conclusion
 
 ✅ BERT significantly outperforms lexicon-based methods in understanding context, negations, and nuanced sentiment.
 
 ✅ Machine learning models achieved high accuracy (97.62%), proving their effectiveness in predicting customer satisfaction.
 
 ✅ Logistic Regression outperformed other models in ROC-AUC, making it the most effective model for sentiment classification.
+
+
 
 ## Future Enhancements
 
