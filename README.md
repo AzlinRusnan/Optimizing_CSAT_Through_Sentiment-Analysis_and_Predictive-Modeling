@@ -2,7 +2,7 @@
 
 <div align="center"><img src="images/image.png" alt="Intro" /></div>
 
-## Project Overview
+## Overview
 
 Customer Satisfaction (CSAT) is a crucial indicator of service quality in organizations. However, understanding the factors that contribute to customer dissatisfaction and predicting negative experiences remains a challenge. This project applies two advanced techniques to address this issue:
 
@@ -12,7 +12,7 @@ Customer Satisfaction (CSAT) is a crucial indicator of service quality in organi
    
 By combining natural language processing (NLP) and machine learning, this study aims to provide deeper insights into customer feedback and proactively anticipate dissatisfaction. The goal is to enhance organizational response strategies and improve overall service efficiency.
 
-## Research Objectives
+## Objectives
 
 This study is structured around three key research objectives. Below are the objective and the key findings:
 
@@ -60,7 +60,7 @@ This study is structured around three key research objectives. Below are the obj
 
 - Logistic Regression achieved the highest ROC-AUC (0.9512), demonstrating its superior ability to distinguish sentiment polarity, despite high accuracy across all models (97.62%).
 
-## 📈 Output for Research Objective 3
+## 📈 Output for Objective 3
 
 ![4](images/op.png)
 
