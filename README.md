@@ -14,7 +14,7 @@ By combining natural language processing (NLP) and machine learning, this projec
 
 ## Objectives
 
-This study is structured around three key research objectives. Below are the objective and the key findings:
+This study is structured around three key objectives. Below are the objective and the key findings:
 
 ### Objective 1: Sentiment Analysis for Customer Feedback
 
