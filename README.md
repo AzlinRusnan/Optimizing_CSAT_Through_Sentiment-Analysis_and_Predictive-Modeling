@@ -10,7 +10,7 @@ Customer Satisfaction (CSAT) is a crucial indicator of service quality in organi
    
 **2. Predictive Modeling – Using machine learning to classify customer satisfaction levels based on incident-related data.**
    
-By combining natural language processing (NLP) and machine learning, this study aims to provide deeper insights into customer feedback and proactively anticipate dissatisfaction. The goal is to enhance organizational response strategies and improve overall service efficiency.
+By combining natural language processing (NLP) and machine learning, this project aims to provide deeper insights into customer feedback and proactively anticipate dissatisfaction. The goal is to enhance organizational response strategies and improve overall service efficiency.
 
 ## Objectives
 
