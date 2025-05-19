@@ -16,7 +16,7 @@ By combining natural language processing (NLP) and machine learning, this projec
 
 This study is structured around three key objectives. Below are the objective and the key findings:
 
-### Objective 1: Sentiment Analysis for Customer Feedback
+### 1: Sentiment Analysis for Customer Feedback
 
 - AFINN initially showed the best classification accuracy.
   
@@ -116,7 +116,7 @@ model.save_pretrained("bert_sentiment_model_v3")
 tokenizer.save_pretrained("bert_sentiment_model_v3")
 ```
 
-### Objective 2: Aligning Sentiment with CSAT Scores
+### 2: Aligning Sentiment with CSAT Scores
 
 ![3](images/objtwo.png)
 
@@ -126,7 +126,7 @@ tokenizer.save_pretrained("bert_sentiment_model_v3")
 
 - This alignment improves the reliability of CSAT scores.
 
-### Objective 3: Predictive Modeling of CSAT Using ML
+### 3: Predictive Modeling of CSAT Using ML
 
 - The following machine learning models were applied:
 
