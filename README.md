@@ -14,6 +14,9 @@ To address this, we developed an AI-based analytics pipeline that combines **Nat
 
 The result is a smarter, scalable system for understanding customer satisfaction, enabling better resource planning and faster issue resolution.
 
+🎯 Project Aim:
+To enhance customer satisfaction analysis by aligning sentiment from customer feedback with CSAT scores, and to develop accurate predictive models that can forecast CSAT outcomes using Machine Learning techniques.
+
 ## Solution Overview
 
 ### 🧠 Phase 1: Sentiment Detection from Customer Comments
